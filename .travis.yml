@@ -17,7 +17,7 @@ before_install:
   - composer self-update
 install:
   - composer install
-# script:
-#     - phpunit --coverage-clover=coverage.xml
+script:
+    - docker build -t mozilla-it/wiki .
 # after_success:
 #     - bash <(curl -s https://codecov.io/bash)
