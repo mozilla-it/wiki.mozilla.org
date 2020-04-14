@@ -1,5 +1,7 @@
 language: php
 sudo: false
+services:
+  - docker
 notifications:
   email:
     on_success: never
@@ -19,7 +21,8 @@ before_install:
   - composer self-update
 install:
   - composer install
-# script:
+script:
+  docker build -t mozilla-it/wiki .
 #     - phpunit --coverage-clover=coverage.xml
 # after_success:
 #     - bash <(curl -s https://codecov.io/bash)
